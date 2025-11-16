@@ -13,10 +13,8 @@ def create_test_data():
     user3 = User.objects.create(username='carol', email='carol@example.com', first_name='Carol', last_name='Lee')
 
     # Teams
-    team1 = Team.objects.create(name='Team Alpha', description='Alpha team')
-    team2 = Team.objects.create(name='Team Beta', description='Beta team')
-    team1.members.add(user1, user2)
-    team2.members.add(user3)
+    team1 = Team.objects.create(name='Team Alpha', description='Alpha team', members=[user1, user2])
+    team2 = Team.objects.create(name='Team Beta', description='Beta team', members=[user3])
 
     # Workouts
     workout1 = Workout.objects.create(name='Pushups', description='Upper body', difficulty='Easy', suggested_for='Beginner')
